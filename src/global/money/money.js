@@ -28,6 +28,20 @@ function MoneyMaskDirective($locale, $parse, PreFormatters) {
 			if (angular.isDefined(attrs.uiHideSpace)) {
 				symbolSeparation = '';
 			}
+			
+			if (angular.isDefined(attrs.decimalDelimiter)) {
+				decimalDelimiter = attrs.decimalDelimiter;
+				if(attrs.decimalDelimiter.length === 0){
+					decimalDelimiter = '.';
+				}
+			}
+			
+			if (angular.isDefined(attrs.thousandsDelimiter)) {
+				thousandsDelimiter = attrs.thousandsDelimiter;
+				if(attrs.thousandsDelimiter.length === 0){
+					decimalDelimiter = ',';
+				}
+			}
 
 			if (angular.isDefined(attrs.currencySymbol)) {
 				currencySym = attrs.currencySymbol;
